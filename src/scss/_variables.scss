@@ -1,0 +1,307 @@
+$_base: 16;
+
+$screen-xs-min: 0;
+$screen-xs-max: 575;
+$screen-sm-min: 576;
+$screen-md-min: 768;
+$screen-lg-min: 992;
+$screen-xl-min: 1200;
+$screen-xxl-min: 1368;
+
+$color-primary: #67A4FF;
+$color-secondary: #283C47;
+$color-white: #fff;
+$color-black: #111;
+$color-font-lightgray: #EBEBEB;
+$color-lightgray: #dadada;
+
+$spacings: ('zero', 0), ('centi', 8), ('deci', 16), ('deca', 24), ('hecto', 32), ('kilo', 40), ('mega', 48),
+  ('giga', 64), ('tera', 72), ('peta', 96), ('exa', 120), ('zetta', 150), ('200', 200), ('yotta', 216), ('28', 28);
+
+$typography: (
+  h1: (48, NULL, NULL, 'Montserrat', 800),
+  h2: (38, NULL, NULL, 'Montserrat', 700),
+  h3: (32, NULL, normal, 'Montserrat', 700),
+  h3 + '.smaller': (20, NULL, normal, 'Montserrat', 700),
+  h4: (26, NULL, normal, 'Montserrat', 700),
+  h5: (22, NULL, normal, 'Montserrat', 700),
+  h6: (20, NULL, normal, 'Montserrat', 700),
+  p: (20, NULL, 0.2px, 'Lato', 500)
+);
+
+$typography-lg: (
+  h1: (42, NULL, NULL, NULL, NULL),
+  h2: (38, NULL, NULL, NULL, NULL),
+  h3: (32, NULL, NULL, NULL, NULL),
+  h3 + '.smaller': (20, NULL, NULL, NULL, NULL),
+  h4: (26, NULL, NULL, NULL, NULL),
+  h5: (22, NULL, NULL, NULL, NULL),
+  h6: (20, NULL, NULL, NULL, NULL),
+  p: (20, NULL, NULL, NULL, NULL)
+);
+
+$typography-sm: (
+  h1: (32, NULL, NULL, NULL, NULL),
+  h2: (30, NULL, NULL, NULL, NULL),
+  h3: (28, NULL, NULL, NULL, NULL),
+  h3 + '.smaller': (20, NULL, NULL, NULL, NULL),
+  h4: (24, NULL, NULL, NULL, NULL),
+  h5: (22, NULL, NULL, NULL, NULL),
+  h6: (20, NULL, NULL, NULL, NULL),
+  p: (20, NULL, NULL, NULL, NULL)
+);
+
+@function getSize( $size, $unit: 'rem', $base: $_base ) {
+  @return #{$size/$base}#{$unit};
+}
+
+@mixin xs {
+  @media (min-width: #{$screen-xs-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin xs-only {
+  @media (max-width: #{$screen-xs-max}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media (min-width: #{$screen-sm-min}#{'px'}) and (max-width: #{$screen-md-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (max-width: #{$screen-md-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media (min-width: #{$screen-md-min}#{'px'}) and (max-width: #{$screen-lg-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media (max-width: #{$screen-lg-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media (min-width: #{$screen-lg-min}#{'px'}) and (max-width: #{$screen-xl-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (max-width: #{$screen-xl-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin xl-only {
+  @media (min-width: #{$screen-xl-min}#{'px'}) and (max-width: #{$screen-xxl-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (max-width: #{$screen-xxl-min - 1}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}#{'px'}) {
+    @content;
+  }
+}
+
+@mixin ratio125-xs {
+  @include xs() {
+    @media (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio125-sm {
+  @include sm() {
+    @media (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio125-md {
+  @include md() {
+    @media (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio125-lg {
+  @include lg() {
+    @media (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio150-xs {
+  @include xs() {
+    @media (min-resolution: 1.5dppx),
+    (min-resolution: 144dpi),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio150-sm {
+  @include sm() {
+    @media (min-resolution: 1.5dppx),
+    (min-resolution: 144dpi),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio150-md {
+  @include md() {
+    @media (min-resolution: 1.5dppx),
+    (min-resolution: 144dpi),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2) {
+      @content;
+    }
+  }
+}
+
+@mixin ratio150-lg {
+  @include lg() {
+    @media (min-resolution: 1.5dppx),
+    (min-resolution: 144dpi),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2) {
+      @content;
+    }
+  }
+}
+
+@mixin defineSpacings( $prefix, $base: $_base ) {
+  @each $s in $spacings {
+    .pt#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      padding-top: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .pb#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      padding-bottom: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .pl#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      padding-left: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .pr#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      padding-right: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .mt#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      margin-top: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .mt-minus#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      margin-top: getSize(nth($s, 2) * -1, 'rem', $_base);
+    }
+
+    .mb#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      margin-bottom: getSize(nth($s, 2), 'rem', $_base);
+    }
+
+    .mr#{if($prefix, '-' + $prefix, null)}-#{nth($s, 1)} {
+      margin-right: getSize(nth($s, 2), 'rem', $_base);
+    }
+  }
+}
+
+@mixin defineTypography( $typo ) {
+  @each $selector, $properties in $typo {
+    #{$selector}, .#{$selector} {
+      @if nth($properties, 1) != NULL {
+        font-size: getSize(nth($properties, 1));
+      }
+
+      @if nth($properties, 2) != NULL {
+        line-height: #{nth($properties, 2)};
+      }
+
+      @if nth($properties, 3) != NULL {
+        letter-spacing: #{nth($properties, 3)};
+      }
+
+      @if nth($properties, 4) != NULL {
+        font-family: #{nth($properties, 4)};
+      }
+
+      @if nth($properties, 5) != NULL {
+        font-weight: #{nth($properties, 5)};
+      }
+    }
+  }
+}
+
+@include xxl() {
+  @for $i from 0 through 12 {
+    $val: ($i * 100)/12;
+
+    .col-xxl-#{$i} {
+      flex: 0 0 #{$val}#{'%'};
+      max-width: #{$val}#{'%'};
+    }
+
+    .offset-xxl-#{$i} {
+      margin-left: #{$val}#{'%'};
+    }
+  }
+
+  .d-xxl-block {
+    display: block !important;
+  }
+
+  .d-xxl-none {
+    display: none !important;
+  }
+}

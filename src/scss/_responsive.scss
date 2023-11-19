@@ -1,0 +1,77 @@
+@import '_variables.scss';
+
+@include xs-only {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@include xs() {
+  $_base: 13;
+
+  html {
+    font-size: #{$_base}px;
+  }
+
+  @include defineSpacings( null, $_base );
+}
+
+@include sm() {
+  $_base: 14;
+
+  html {
+    font-size: #{$_base}px;
+  }
+
+  @include defineSpacings( 'sm', $_base );
+
+  .btn-dark {
+    font-size: getSize(16, 'rem', $_base);
+  }
+}
+
+@include md() {
+  $_base: 14;
+
+  html {
+    font-size: #{$_base}px;
+  }
+
+  @include defineSpacings( 'md', $_base );
+
+  .btn-dark {
+    border-radius: getSize(8, 'rem', $_base);
+    font-size: getSize(20, 'rem', $_base);
+  }
+}
+
+@include lg() {
+  $_base: 15;
+
+  html {
+    font-size: #{$_base}px;
+  }
+
+  @include defineSpacings( 'lg', $_base );
+}
+
+@include xl-only() {
+  .inline-links {
+    &.padding-right {
+      padding-right: 0;
+    }
+  }
+}
+
+@include xl() {
+  html {
+    font-size: #{$_base}px;
+  }
+
+  @include defineSpacings( 'xl', $_base );
+}
+
+@include xxl() {
+  @include defineSpacings( 'xxl', $_base );
+}

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+@import "variables";
+
+html, body {
+  //font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  //font-size: getSize(20);
+  //letter-spacing: 0.2px;
+  margin-bottom: 0;
+  //font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  font-size: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+//h1, .h1 {
+//  font-size: getSize(49);
+//  font-weight: 800;
+//}
+//
+//h2, .h2 {
+//  font-size: getSize(34);
+//  font-weight: 700;
+//}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-bottom: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+menu a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: getSize(18);
+
+  b {
+  font-weight: 600;
+  }
+}
+
+// .font-montserrat {
+//   font-family: 'Montserrat', sans-serif;
+// }
+
+@include defineTypography($typography);
+
+@include lg-max() {
+  @include defineTypography($typography-lg);
+}
+
+@include sm-max() {
+  @include defineTypography($typography-sm);
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.opacity-half {
+  opacity: 0.5;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-default {
+  font-size: getSize(20);
+  color: $color-primary;
+}
+
+//@include sm-max {
+//  h1 {
+//    font-size: getSize(30);
+//  }
+//}
