@@ -86,6 +86,14 @@ const plugins = [
   new HtmlWebPackPlugin({
     template: "./src/pages/poszycia-stadionow/index.html",
     filename: "./poszycia-stadionow/index.html"
+  }),
+  new HtmlWebPackPlugin({
+    template: "./src/pages/odziez-szyta-na-miare/index.html",
+    filename: "./odziez-szyta-na-miare/index.html"
+  }),
+  new HtmlWebPackPlugin({
+    template: "./src/pages/podsufitek-namiotowy/index.html",
+    filename: "./podsufitek-namiotowy/index.html"
   })
 ];
 

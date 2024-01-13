@@ -120,6 +120,21 @@ menu a {
 //   z-index: -1;
 // }
 
+.text-content-small {
+  max-width: 900px;
+}
+
+
+
+ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+
+  li {
+    font-size: initial;
+  }
+}
+
 @include md-max {
   .method.odd {
     .method__divider {
@@ -139,6 +154,12 @@ menu a {
   .method__divider {
     display: none;
   }
+}
+
+.img-link {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 footer {

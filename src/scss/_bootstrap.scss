@@ -10,6 +10,12 @@
   padding-left: 12px;
 }
 
+
+
+ul {
+  list-style-type: dotted;
+}
+
 @include xxl() {
   @for $i from 1 through 12 {
     $val: ($i * 100)/12;
