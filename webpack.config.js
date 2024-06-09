@@ -94,6 +94,10 @@ const plugins = [
   new HtmlWebPackPlugin({
     template: "./src/pages/podsufitek-namiotowy/index.html",
     filename: "./podsufitek-namiotowy/index.html"
+  }),
+  new HtmlWebPackPlugin({
+    template: "./src/pages/namioty/index.html",
+    filename: "./namioty/index.html"
   })
 ];
 
